@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Third Task</title>
+</head>
+<body>
+        <div id="app">
+            <div>
+                <p>Current Value: {{ value }}</p>
+                <button @click="value += 5">Add 5</button>
+                <button @click="value += 1">Add 1</button>
+                <p>{{ result }}</p>
+            </div>
+            <div>
+                <input type="number">
+                <p>{{ value }}</p>
+            </div>
+        </div>
+        
+        <script>
+      new Vue({
+        el: '#app',
+        data: {
+            value: 0,
+            output:''
+        },
+        computed:{
+            result:function(){
+                return this.value !== 37 ? "not there yet' as long as" :"done"
+            }
+        },
+        watch: {
+            result:function(val){
+                var vm = this;
+                setTimeout(function(){
+                    vm.value = 0;
+                },5000);
+            }
+        }
+      
+    });
+        </script>
+</body>
+</html>

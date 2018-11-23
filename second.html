@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Second Task</title>
+</head>
+<body>
+        <div id="app">
+            <div>
+                <button v-on:click="alertMe">Click Me</button>
+            </div>
+            <div>
+                <input type="text" v-on:keydown="key">
+                <p>{{ value }}</p>
+            </div> 
+            <div>
+                    <input type="text" v-on:keydown.enter="entervalue">
+                    <p>{{ value2 }}</p>
+                </div> 
+        </div>
+        <script>
+        var app = new Vue({ 
+    el: '#app',
+    data: {
+        message: 'VueJS is pretty cool - ',
+        value:'',
+        value2:""
+
+    },
+    methods:{
+        alertMe: function () {
+            alert("Hola Galan");
+        },
+        key:function(event){
+            return this.value = event.target.value
+        },
+        entervalue:function(event){
+            return this.value2 = event.target.value
+        },
+        coordinate:function(event){
+                this.x=event.clientX,
+                this.y=event.clientY   
+        }
+    }
+});
+        </script>
+</body>
+</html>

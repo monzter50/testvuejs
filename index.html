@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>First Task</title>
+</head>
+<body>
+    <div id="app">
+            <h1 >
+                    {{message}} {{name}} {{age}}
+            </h1>
+            <h3>Edad multiplicado por 3: {{multiplicar()}}</h3>
+            <div>
+                <img v-bind:src="link" style="width:100px;height:100px">
+            </div>
+            <div>
+                <input type="text" v-model="name">
+            </div>  
+            <div  v-on:mousemove="coordinate" style="margin-top:20px;">
+                    <button v-on:click="increase(2,$event)">Counter</button>
+                    <p>{{counter}}</p>
+                    <p>{{x}} /  {{y}}</p>- <span v-on:mousemove.stop.prevent>DEAD SPOT</span>
+            </div>
+    </div>
+    <script src="Vue.js"></script>
+</body>
+</html>
